@@ -1,0 +1,261 @@
+/* ==== Fix scaling on internet ==== */
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ===== General ===== */
+body {
+    background: linear-gradient(135deg, #7b0000, #3b0000, #1a0000);
+    min-height: 100vh;
+    color: #fff;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ===== Header ===== */
+.header {
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(8px);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header strong {
+    font-size: 18px;
+}
+
+.top-right-buttons button {
+    background: #ff4d4d;
+    border: none;
+    color: #fff;
+    padding: 7px 12px;
+    margin-left: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.top-right-buttons button:hover {
+    background: #cc0000;
+}
+
+/* ===== Pages ===== */
+.page {
+    padding: 25px;
+}
+
+/* ===== Offers Section ===== */
+.offers-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.offer-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    width: 180px;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.offer-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.offer-card p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.offer-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    background: rgba(255,255,255,0.18);
+}
+
+/* ===== Withdraw Section ===== */
+.withdraw-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.withdraw-method {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    width: 220px;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.withdraw-method img {
+    margin-bottom: 10px;
+}
+
+.withdraw-method p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.withdraw-method:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.18);
+}
+
+.withdraw-inputs input {
+    width: 100%;
+    padding: 9px;
+    margin: 6px 0;
+    border-radius: 8px;
+    border: none;
+}
+
+.withdraw-inputs button {
+    width: 100%;
+    padding: 9px;
+    margin-top: 5px;
+    background: #ff4d4d;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.withdraw-inputs button:hover {
+    background: #cc0000;
+}
+
+/* ===== Auth Pages ===== */
+.auth-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.auth-box {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    width: 320px;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    text-align: center;
+}
+
+.auth-box h2 {
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: none;
+}
+
+.auth-box button {
+    width: 100%;
+    padding: 10px;
+    background: #ff4d4d;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-box button:hover {
+    background: #cc0000;
+}
+
+.auth-box a {
+    color: #ff4d4d;
+    text-decoration: none;
+}
+
+.auth-box p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* ===== Floating Menu (3 خطوط) ===== */
+.floating-menu {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+    font-size: 28px;
+    color: #ffd700;
+}
+
+.floating-options {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.floating-options button {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    background: #ff4d4d;
+    border: none;
+    color: #fff;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.floating-options button:hover {
+    background: #cc0000;
+}
+
+#site-name {
+    position: fixed;   /* ثابت بالنسبة للنافذة */
+    top: 40px;         
+    right: 10px;       
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffcc00;
+    text-shadow: 0 0 8px #ffcc00, 0 0 16px #ff9900, 0 0 24px #ff6600;
+    z-index: 9999;
+    font-family: 'UnifrakturCook', cursive;
+    letter-spacing: 2px;
+    transform: rotate(0deg);
+}

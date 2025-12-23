@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sign Up - Earnfire</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body class="auth-body">
+
+<div class="auth-box">
+    <h2>Create Account</h2>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="email" id="email" placeholder="Email (@gmail.com only)">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="signUp()">Sign Up</button>
+
+    <p>Already have an account?  
+        <a href="signin.html">Sign In</a>
+    </p>
+</div>
+<!-- كود Firebase JS الخاص بتسجيل المستخدم -->
+<script>
+  const auth = firebase.auth(); // بعد تهيئة Firebase كما ذكرت
+
+  const signupForm = document.getElementById("signupForm"); // افترض أن الفورم له id="signupForm"
+
+  signupForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = document.getElementById("emailInput").value;
+    const password = document.getElementById("passwordInput").value;
+
+    auth.createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log("تم تسجيل المستخدم:", user.email);
+        // هنا يمكنك توجيه المستخدم للصفحة الرئيسية
+        window.location.href = "index.html";
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  });
+</script>
+
+</body>
+</html

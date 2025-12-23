@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- لحل مشكلة المقاسات -->
+<title>Withdraw - Earnfire</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+
+<body>
+
+<!-- ===== Header ===== -->
+<div class="header">
+  <div>
+    <strong>Withdraw</strong>
+  </div>
+
+  <div class="top-right-buttons">
+    <button onclick="location.href='index.html'">Offers</button>
+    <button onclick="signOut()">Logout</button>
+  </div>
+</div>
+
+<!-- ===== Withdraw Page ===== -->
+<div class="page">
+
+  <div class="withdraw-section">
+
+    <!-- Binance -->
+    <div class="withdraw-method" onclick="toggleWithdrawFields('binanceBox')">
+      <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png" width="80">
+      <p>Binance</p>
+
+      <div class="withdraw-inputs" id="binanceBox" style="display:none">
+        <input type="number" placeholder="Points to withdraw">
+        <input type="text" placeholder="Binance ID">
+        <button onclick="withdraw('Binance')">Withdraw</button>
+      </div>
+    </div>
+
+    <!-- FaucetPay -->
+    <div class="withdraw-method" onclick="toggleWithdrawFields('faucetBox')">
+      <img src="https://faucetpay.io/static/images/logo.png" width="80">
+      <p>FaucetPay</p>
+
+      <div class="withdraw-inputs" id="faucetBox" style="display:none">
+        <input type="number" placeholder="Points to withdraw">
+        <input type="text" placeholder="FaucetPay Email or Username">
+        <button onclick="withdraw('FaucetPay')">Withdraw</button>
+      </div>
+    </div>
+
+    <!-- Free Fire -->
+    <div class="withdraw-method" onclick="toggleWithdrawFields('ffBox')">
+      <img src="https://seeklogo.com/images/F/free-fire-logo.png" width="80">
+      <p>Free Fire</p>
+
+      <div class="withdraw-inputs" id="ffBox" style="display:none">
+        <input type="number" placeholder="Points to withdraw">
+        <input type="text" placeholder="Free Fire ID">
+        <button onclick="withdraw('Free Fire')">Withdraw</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== Note ===== -->
+  <p style="text-align:center;margin-top:25px;font-weight:bold;">
+    💡 1000 Points = 1 Dollar
+  </p>
+
+</div>
+
+</body>
+</html>

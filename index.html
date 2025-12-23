@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<!-- هذا هو السطر السحري -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Earnfire</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+
+<body>
+
+<!-- ===== Header ===== -->
+<div id="site-name">Earnfire</div>
+
+<div class="header">
+  <div>
+    <strong id="userDisplay">User</strong> |
+    <span id="balanceDisplay">0 Points</span>
+  </div>
+
+  <div class="top-right-buttons">
+    <button onclick="showPage('offers')">Offers</button>
+    <button onclick="showPage('withdraw')">Withdraw</button>
+    <button onclick="signOut()">Logout</button>
+  </div>
+</div>
+
+<!-- ===== OFFERS PAGE ===== -->
+<div id="offersPage" class="page">
+
+  <h2>Offer Walls</h2>
+
+  <div class="offers-section">
+
+    <div class="offer-card">
+      <img src="https://via.placeholder.com/150?text=Adtowall">
+      <p>Adtowall</p>
+    </div>
+
+    <div class="offer-card">
+      <img src="https://via.placeholder.com/150?text=Pubscall">
+      <p>Pubscall</p>
+    </div>
+
+    <div class="offer-card">
+      <img src="https://via.placeholder.com/150?text=Playtime">
+      <p>Playtime</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== WITHDRAW PAGE ===== -->
+<div id="withdrawPage" class="page" style="display:none">
+
+  <h2>Withdraw</h2>
+
+  <div class="withdraw-section">
+
+    <div class="withdraw-method" onclick="toggleWithdrawFields('binanceBox')">
+      <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png" width="80">
+      <p>Binance</p>
+      <div class="withdraw-inputs" id="binanceBox" style="display:none">
+        <input type="number" placeholder="Points">
+        <input type="text" placeholder="Binance ID">
+        <button onclick="withdraw('Binance')">Withdraw</button>
+      </div>
+    </div>
+
+    <div class="withdraw-method" onclick="toggleWithdrawFields('faucetBox')">
+      <img src="https://faucetpay.io/static/images/logo.png" width="80">
+      <p>FaucetPay</p>
+      <div class="withdraw-inputs" id="faucetBox" style="display:none">
+        <input type="number" placeholder="Points">
+        <input type="text" placeholder="FaucetPay Email / Username">
+        <button onclick="withdraw('FaucetPay')">Withdraw</button>
+      </div>
+    </div>
+
+    <div class="withdraw-method" onclick="toggleWithdrawFields('ffBox')">
+      <img src="https://seeklogo.com/images/F/free-fire-logo.png" width="80">
+      <p>Free Fire</p>
+      <div class="withdraw-inputs" id="ffBox" style="display:none">
+        <input type="number" placeholder="Points">
+        <input type="text" placeholder="Free Fire ID">
+        <button onclick="withdraw('Free Fire')">Withdraw</button>
+      </div>
+    </div>
+
+  </div>
+
+  <p style="text-align:center;margin-top:20px;">
+    💡 1000 Points = 1 Dollar
+  </p>
+</div>
+
+<!-- ===== Background Coins ===== -->
+<div id="bg-coins"></div>
+
+<footer style="text-align:center; margin-top:20px;">
+  <a href="privacy.html" target="_blank" style="color:#1abc9c; text-decoration:none;">
+    سياسة الخصوصية
+  </a>
+</footer>
+
+<script>
+function sendToTelegram(message) {
+  fetch("https://api.telegram.org/bot8439819275:AAHL4bFI1DFNld5PVz3x-k7c9KWXsSHOfTg/sendMessage", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chat_id: "6181639490",
+      text: message
+    })
+  });
+}
+</script>
+
+</body>
+</html>
